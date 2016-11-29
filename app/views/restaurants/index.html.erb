@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h3><i class="glyphicon glyphicon-search"></i> Restaurants</h3>
+</div>
+<% if notice %>
+  <div class="alert alert-info"><%= notice %></div>
+<% end %>
+<div class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Specialty</th>
+        <th>Address</th>
+        <th>Neighborhood</th>
+        <th>City</th>
+        <th>State</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+        <tr>
+          <td><%= restaurant.name %></td>
+          <td><%= restaurant.specialty %></td>
+          <td><%= restaurant.address %></td>
+          <td><%= restaurant.neighborhood %></td>
+          <td><%= restaurant.city %></td>
+          <td><%= restaurant.state %></td>
+          <td class="text-center">
+            <%= link_to restaurant, class: 'btn btn-info btn-xs' do %>
+              <i class="glyphicon glyphicon-info-sign"></i> Show
+            <% end %>
+            <%= link_to edit_restaurant_path(restaurant), class: 'btn btn-warning btn-xs' do %>
+                <i class="glyphicon glyphicon-edit"></i> Edit
+            <% end %>
+            <%= link_to restaurant, class: 'btn btn-danger btn-xs', method: :delete,
+                        data: { confirm: 'Are you sure?'} do %>
+                <i class="glyphicon glyphicon-remove-sign"></i> Destroy
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
+<%= link_to new_restaurant_path, class: 'btn btn-primary btn-sm' do %>
+  <i class="glyphicon glyphicon-plus-sign"></i> New Restaurant
+<% end %>

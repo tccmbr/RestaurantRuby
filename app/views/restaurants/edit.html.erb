@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h3><i class="glyphicon glyphicon-edit"></i> Editing Restaurant</h3>
+</div>
+<%= render 'form', restaurant: @restaurant %>
+
+<%= link_to @restaurant, class: 'btn btn-info btn-sm' do %>
+    <i class="glyphicon glyphicon-info-sign"></i> Show
+<% end %>
+
+<%= link_to restaurants_path, class: 'btn btn-default btn-sm' do %>
+    <i class="glyphicon glyphicon-arrow-left"></i> Back
+<% end %>

@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h3><i class="glyphicon glyphicon-info-sign"></i> <%= @restaurant.name %></h3>
+  <p>
+    <strong>Created at:</strong> <%= @restaurant.created_at %>
+    <strong>Updated at:</strong> <%= @restaurant.updated_at %>
+  </p>
+</div>
+<% if notice %>
+    <div class="alert alert-info"><%= notice %></div>
+<% end %>
+<div class="panel panel-default">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Specialty</th>
+        <th>Address</th>
+        <th>Neighborhood</th>
+        <th>City</th>
+        <th>State</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @restaurant.specialty %></td>
+        <td><%= @restaurant.address %></td>
+        <td><%= @restaurant.neighborhood %></td>
+        <td><%= @restaurant.city %></td>
+        <td><%= @restaurant.state %></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="panel-footer">
+    <%= link_to edit_restaurant_path(@restaurant), class: 'btn btn-warning btn-sm' do%>
+      <i class="glyphicon glyphicon-edit"></i> Edit
+    <% end %>
+    <%= link_to restaurants_path, class: 'btn btn-default btn-sm' do %>
+      <i class="glyphicon glyphicon-arrow-left"></i> Back
+    <% end %>
+  </div>
+</div>

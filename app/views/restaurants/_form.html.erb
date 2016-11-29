@@ -1,0 +1,67 @@
+<%= form_for(restaurant) do |f| %>
+    <div class="row">
+      <div class="col-md-12">
+        <% if restaurant.errors.any? %>
+          <div class="alert alert-danger">
+            <h4><%= pluralize(restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h4>
+
+            <ul>
+            <% restaurant.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= f.label :specialty %>
+          <%= f.text_field :specialty, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= f.label :address %>
+          <%= f.text_field :address, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= f.label :neighborhood %>
+          <%= f.text_field :neighborhood, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= f.label :city %>
+          <%= f.text_field :city, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= f.label :state %>
+          <%= f.select :state, {'Select': '','RN': 'RN', 'PB': 'PB'}, {},class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="form-group">
+          <%= f.button class: 'btn btn-success btn-sm' do %>
+              <i class="glyphicon glyphicon-save"></i> Save
+          <% end %>
+        </div>
+      </div>
+    </div>
+<% end %>
