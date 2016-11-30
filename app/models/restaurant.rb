@@ -7,4 +7,6 @@ class Restaurant < ApplicationRecord
   validates :neighborhood, presence: true, length: {maximum: 30, minimum: 4}
   validates :city, presence: true, length: {maximum: 20, minimum: 4}
   validates :state, presence: true, length: {maximum: 2, minimum: 2}
+
+  has_many :comments
 end

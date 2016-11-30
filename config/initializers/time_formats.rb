@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:datetime_pt_br] = "%d/%m/%Y %H:%M:%S"

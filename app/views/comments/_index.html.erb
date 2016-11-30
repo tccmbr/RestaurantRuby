@@ -1,0 +1,10 @@
+<div style="overflow-y: auto; max-height: 200px">
+  <ul id="restaurant_comments_<%= restaurant.id %>" class="list-group">
+    <% restaurant.comments.each do |comment| %>
+        <li class="list-group-item">
+          <strong><%= comment.author %></strong><br>
+          - <%= comment.message %>
+        </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,8 +1,10 @@
 <div class="page-header">
-  <h3><i class="glyphicon glyphicon-info-sign"></i> <%= @restaurant.name %></h3>
+  <h3>
+    <%= image_tag @restaurant.logo.url(:thumb) %> <%= @restaurant.name %>
+  </h3>
   <p>
-    <strong>Created at:</strong> <%= @restaurant.created_at %>
-    <strong>Updated at:</strong> <%= @restaurant.updated_at %>
+    <span class="label label-default">Created at <%= @restaurant.created_at.to_formatted_s(:datetime_pt_br) %></span>
+    <span class="label label-default">Updated at <%= @restaurant.updated_at.to_formatted_s(:datetime_pt_br) %></span>
   </p>
 </div>
 <% if notice %>

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129123454) do
+ActiveRecord::Schema.define(version: 20161129141122) do
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "message",       limit: 50
+    t.string   "author",        limit: 20
+    t.integer  "restaurant_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "restaurants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",              limit: 80
@@ -21,7 +29,6 @@ ActiveRecord::Schema.define(version: 20161129123454) do
     t.string   "state",             limit: 2
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.string   "logo"
     t.string   "logo_file_name"
     t.string   "logo_content_type"
     t.integer  "logo_file_size"

@@ -12,11 +12,8 @@
               <%= restaurant.city %>-<%= restaurant.state %>
             </address>
           </p>
-          <p>
-            <%= link_to restaurant, class: 'btn btn-default btn-xs' do %>
-              <i class="glyphicon glyphicon-comment"></i> comment
-            <% end %>
-          </p>
+          <%= render 'comments/index', restaurant: restaurant %>
+          <%= render 'comments/form', comment: @comment, restaurant: restaurant %>
         </div>
       </div>
     </div>
